@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday! 🎂</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Floating particles background -->
+  <div class="particles-bg" id="particlesBg"></div>
+
+
+
+  <!-- ===== CURTAIN OVERLAY ===== -->
+  <div class="curtain-overlay" id="curtainOverlay">
+    <!-- Left curtain panel -->
+    <div class="curtain-panel curtain-left" id="curtainLeft">
+      <div class="curtain-fabric">
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+      </div>
+      <div class="curtain-drape"></div>
+    </div>
+
+    <!-- Right curtain panel -->
+    <div class="curtain-panel curtain-right" id="curtainRight">
+      <div class="curtain-fabric">
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+        <div class="curtain-fold"></div>
+      </div>
+      <div class="curtain-drape"></div>
+    </div>
+
+    <!-- Curtain top valance / header -->
+    <div class="curtain-header">
+      <div class="curtain-header-fabric"></div>
+    </div>
+
+    <!-- Center ribbon with OPEN text -->
+    <div class="curtain-center" id="curtainCenter">
+      <div class="curtain-ribbon" id="openButton">
+        <div class="ribbon-text">
+          <span class="open-label">✨ OPEN ✨</span>
+          <span class="open-hint">Click to reveal</span>
+        </div>
+      </div>
+      <div class="curtain-tassel left-tassel"></div>
+      <div class="curtain-tassel right-tassel"></div>
+    </div>
+
+    <!-- Decorative curtain rod rings -->
+    <div class="rod-ring" style="left: 8%;"></div>
+    <div class="rod-ring" style="left: 18%;"></div>
+    <div class="rod-ring" style="left: 28%;"></div>
+    <div class="rod-ring" style="left: 38%;"></div>
+    <div class="rod-ring" style="left: 48%;"></div>
+    <div class="rod-ring" style="left: 58%;"></div>
+    <div class="rod-ring" style="left: 68%;"></div>
+    <div class="rod-ring" style="left: 78%;"></div>
+    <div class="rod-ring" style="left: 88%;"></div>
+  </div>
+
+  <!-- ===== LANDING PAGE CONTENT (behind curtains) ===== -->
+  <div class="page active" id="wishPage">
+
+    <!-- ===== STEP 1: LOADING SCREEN ===== -->
+    <div class="story-step" id="stepLoading">
+      <div class="loading-container">
+        <div class="loading-icon-wrapper">
+          <div class="loading-outer-ring"></div>
+          <div class="loading-inner-heart">💖</div>
+        </div>
+        <p class="loading-text">Loading something special...</p>
+        <div class="loading-bar-track">
+          <div class="loading-bar-fill" id="loadingBarFill"></div>
+        </div>
+        <p class="loading-percent" id="loadingPercent">0%</p>
+      </div>
+    </div>
+
+    <!-- ===== STEP 2: TEASE MESSAGE ===== -->
+    <div class="story-step" id="stepTease">
+      <div class="story-back">
+        <button class="back-btn" onclick="goToPrevStep()">← Back</button>
+      </div>
+      <div class="tease-container">
+        <div class="tease-sparkles">
+          <span class="tease-star" style="animation-delay:0s;">✨</span>
+          <span class="tease-star" style="animation-delay:0.3s;">🌟</span>
+          <span class="tease-star" style="animation-delay:0.6s;">✨</span>
+          <span class="tease-star" style="animation-delay:0.9s;">💫</span>
+          <span class="tease-star" style="animation-delay:1.2s;">✨</span>
+        </div>
+        <div class="tease-content">
+          <div class="tease-rose">🌹</div>
+          <h2 class="tease-heading">
+            There's something special<br>
+            <span class="tease-emphasis">I want to tell you...</span>
+          </h2>
+          <div class="tease-divider"></div>
+          <p class="tease-hint">Are you ready?</p>
+        </div>
+        <button class="next-btn" onclick="goToStep('stepGreeting')">
+          <span class="btn-text">Next</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== STEP 3: BIRTHDAY GREETING + AGE TRACKER ===== -->
+    <div class="story-step" id="stepGreeting">
+      <div class="story-back">
+        <button class="back-btn" onclick="goToPrevStep()">← Back</button>
+      </div>
+      <div class="greeting-container">
+        <div class="greeting-flower-top">
+          <span>🌸</span><span>🌹</span><span>🌸</span>
+        </div>
+
+        <h1 class="greeting-title">
+          Happy Birthday<br>
+          <span class="greeting-name">Ra Devi!</span>
+          <span class="greeting-emoji">🎉</span>
+        </h1>
+
+        <!-- Real-time Age Tracker -->
+        <div class="age-tracker-wrapper">
+          <div class="age-tracker-glow"></div>
+          <p class="age-tracker-label">✨ Celebrating your beautiful journey through life ✨</p>
+          <div class="age-grid">
+            <div class="age-unit">
+              <span class="age-number" id="ageYears">0</span>
+              <span class="age-unit-label">Years</span>
+            </div>
+            <div class="age-sep">:</div>
+            <div class="age-unit">
+              <span class="age-number" id="ageMonths">0</span>
+              <span class="age-unit-label">Months</span>
+            </div>
+            <div class="age-sep">:</div>
+            <div class="age-unit">
+              <span class="age-number" id="ageDays">0</span>
+              <span class="age-unit-label">Days</span>
+            </div>
+            <div class="age-sep">:</div>
+            <div class="age-unit">
+              <span class="age-number" id="ageHours">00</span>
+              <span class="age-unit-label">Hours</span>
+            </div>
+            <div class="age-sep">:</div>
+            <div class="age-unit">
+              <span class="age-number" id="ageMins">00</span>
+              <span class="age-unit-label">Mins</span>
+            </div>
+            <div class="age-sep">:</div>
+            <div class="age-unit">
+              <span class="age-number" id="ageSecs">00</span>
+              <span class="age-unit-label">Secs</span>
+            </div>
+          </div>
+        </div>
+
+        <button class="next-btn" onclick="goToStep('stepGallery')">
+          <span class="btn-text">Next</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== STEP 4: PHOTO GALLERY ===== -->
+    <div class="story-step" id="stepGallery">
+      <div class="story-back">
+        <button class="back-btn" onclick="goToPrevStep()">← Back</button>
+      </div>
+      <div class="gallery-step-container">
+        <h2 class="gallery-step-title">A Beautiful Girl</h2>
+        <p class="gallery-step-subtitle">with Beautiful Moments ✨</p>
+        <div class="gallery-step-grid" id="galleryStepGrid"></div>
+        <button class="next-btn" onclick="goToStep('stepMessage')">
+          <span class="btn-text">Next</span>
+          <span class="btn-arrow">→</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- ===== STEP 5: BIRTHDAY MESSAGE ===== -->
+    <div class="story-step" id="stepMessage">
+      <div class="story-back">
+        <button class="back-btn" onclick="goToPrevStep()">← Back</button>
+      </div>
+      <div class="message-container">
+        <div class="message-floral-top">🌹 🌸 💖 🌸 🌹</div>
+
+        <div class="message-card">
+          <h2 class="message-title">A Special Note for You 💌</h2>
+
+          <div class="message-body">
+            <p>
+              Dearest <span class="msg-highlight">Devi Priya</span>,
+            </p>
+            <p>
+              On this beautiful day, as the world celebrates another year of your existence,
+              I wanted to take a moment to tell you just how <span class="msg-highlight">truly special</span>
+              you are.
+            </p>
+            <p>
+              Your smile has the power to brighten the darkest days. Your kindness touches
+              everyone around you. Your strength inspires those who know you. And your
+              presence... it makes everything better.
+            </p>
+            <p>
+              Today isn't just about getting older — it's about celebrating the
+              <span class="msg-highlight">incredible person</span> you've become and all the
+              beautiful moments that lie ahead.
+            </p>
+            <p>
+              May this year bring you <span class="msg-highlight">endless joy</span>,
+              <span class="msg-highlight">unforgettable adventures</span>, and lot's of
+              <span class="msg-highlight">memories</span>.
+            </p>
+            <p>
+              Once Again <span class="msg-highlight">Happy birthday ra devi</span>.
+            </p>
+            <p>
+              Naku thelsi nee birthday celebrate kalsi chesedhi idhi first and idhe last avachu,
+              thelidhu but idhe last avthadi emo anni — oka chinna doubt tho ee website chesanu.
+              Atleast deenitho ayina meemu andaram gurthuntam emo anni. Naku thelsi neeku idhi
+              cring anipinchachu but just nenu edo try chesi to make your day better.
+              <span class="msg-highlight">I Wish neeku nachalani.</span>
+            </p>
+            <p>
+              You are a gem, a star, a masterpiece. <br>
+              Never forget that.
+            </p>
+            <p class="message-signoff">
+              — from Shiva.....sorry(uncle)
+            </p>
+          </div>
+        </div>
+
+        <div class="message-actions">
+          <a href="#" class="final-btn cake-btn" onclick="switchView('cake')">🎂 Cut the Cake!</a>
+          <a href="#" class="final-btn gallery-btn" onclick="switchView('gallery')">📸 View Gallery</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== CAKE VIEW (hidden by default) ===== -->
+  <div class="page" id="viewCake" style="display:none;">
+    <button class="back-btn" onclick="switchView('home')">← Back</button>
+    <div class="cake-container">
+      <h1 style="font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--deep-rose); margin-bottom: 10px;">
+        Time for Cake! 🎂
+      </h1>
+      <p style="color: var(--warm-gold); font-size: 1.1rem; margin-bottom: 20px; font-weight: 300;">
+        Click on the cake to make a wish and cut it!
+      </p>
+
+      <div class="cake-scene" id="cakeScene">
+        <div class="cake-top">
+          <div class="cake-rose"></div>
+          <div class="cake-rose"></div>
+          <div class="cake-rose"></div>
+          <div class="cake-rose"></div>
+          <div class="candle"></div>
+          <div class="candle"></div>
+          <div class="candle"></div>
+          <div class="candle"></div>
+          <div class="candle"></div>
+        </div>
+        <div class="cake-layer" style="margin-top: -5px;"></div>
+        <div class="cake-layer" style="margin-top: 5px;"></div>
+        <div class="cake-base">
+          <div class="frosting-drip"></div>
+          <div class="frosting-drip"></div>
+          <div class="frosting-drip"></div>
+          <div class="frosting-drip"></div>
+          <div class="frosting-drip"></div>
+          <div class="frosting-drip"></div>
+        </div>
+      </div>
+
+      <p class="cake-instruction" id="cakeInstruction">👇 Tap the cake to cut it!</p>
+      <p class="cake-message" id="cakeMessage">
+        🎉 Happy Birthday! Wishes do come true! 💖
+      </p>
+
+      <div style="margin-top: 30px;">
+        <button class="explore-btn" style="display:none;" id="galleryBtn" onclick="switchView('gallery')">📸 View Photo Gallery</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== GALLERY VIEW (hidden by default) ===== -->
+  <div class="page" id="viewGallery" style="display:none;">
+    <button class="back-btn" onclick="switchView('home')">← Back</button>
+    <div class="gallery-wrapper">
+      <h1 class="gallery-title">Beautiful Moments</h1>
+      <p class="gallery-subtitle">✨ A collection of precious memories ✨</p>
+
+      <!-- View toggle -->
+      <div class="view-toggle">
+        <button class="toggle-btn active" onclick="showView('carousel')">🎠 3D Carousel</button>
+        <button class="toggle-btn" onclick="showView('grid')">📸 Grid View</button>
+      </div>
+
+      <!-- 3D Carousel view -->
+      <div id="carouselView">
+        <div id="threeCarousel"></div>
+        <div class="carousel-controls">
+          <button class="carousel-btn" onclick="rotateCarousel(-1)">◀</button>
+          <span class="carousel-indicator" id="carouselIndicator">1 / 11</span>
+          <button class="carousel-btn" onclick="rotateCarousel(1)">▶</button>
+        </div>
+        <p style="color: var(--warm-gold); font-size: 0.9rem; margin-top: 15px; font-weight: 300;">
+          💫 Drag to rotate • Click a photo to view
+        </p>
+      </div>
+
+      <!-- Grid view (hidden by default) -->
+      <div id="gridView" style="display: none;">
+        <div class="photo-grid" id="photoGrid"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lightbox for gallery -->
+  <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.85); z-index:1000; align-items:center; justify-content:center; cursor:pointer; backdrop-filter:blur(10px);">
+    <div id="lightboxContent" style="max-width:90vw; max-height:90vh; border-radius:20px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.5); border:3px solid rgba(255,255,255,0.3); position:relative;"></div>
+  </div>
+
+  <!-- ===== HIDDEN YOUTUBE PLAYER FOR MUSIC ===== -->
+  <div id="youtubePlayer"></div>
+
+  <!-- ===== MUSIC TOGGLE BUTTON ===== -->
+  <button class="music-btn" id="musicToggleBtn" onclick="toggleMusic()">
+    <span class="music-icon">🎶</span>
+    <span class="music-label">Play Music</span>
+  </button>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/cake.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="/js/gallery.js"></script>
+  <script src="/js/player.js"></script>
+</body>
+</html>

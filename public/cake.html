@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cut the Cake! 🎂</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <!-- Floating particles background -->
+  <div class="particles-bg" id="particlesBg"></div>
+
+  <a href="/" class="back-btn" style="position:fixed; top:25px; left:25px; z-index:100; text-decoration:none;">← Back</a>
+
+  <!-- Cake Page -->
+  <div class="page active" id="cakePage">
+    <div class="cake-container">
+      <h1 style="font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--deep-rose); margin-bottom: 10px;">
+        Time for Cake! 🎂
+      </h1>
+      <p style="color: var(--warm-gold); font-size: 1.1rem; margin-bottom: 20px; font-weight: 300;">
+        Click on the cake to make a wish and cut it!
+      </p>
+
+      <div class="cake-scene" id="cakeScene">
+        <div class="cake-top">
+          <div class="cake-rose"></div>
+          <div class="cake-rose"></div>
+          <div class="cake-rose"></div>
+          <div class="cake-rose"></div>
+          <div class="candle"></div>
+          <div class="candle"></div>
+          <div class="candle"></div>
+          <div class="candle"></div>
+          <div class="candle"></div>
+        </div>
+        <div class="cake-layer" style="margin-top: -5px;"></div>
+        <div class="cake-layer" style="margin-top: 5px;"></div>
+        <div class="cake-base">
+          <div class="frosting-drip"></div>
+          <div class="frosting-drip"></div>
+          <div class="frosting-drip"></div>
+          <div class="frosting-drip"></div>
+          <div class="frosting-drip"></div>
+          <div class="frosting-drip"></div>
+        </div>
+      </div>
+
+      <p class="cake-instruction" id="cakeInstruction">👇 Tap the cake to cut it!</p>
+      <p class="cake-message" id="cakeMessage">
+        🎉 Happy Birthday! Wishes do come true! 💖
+      </p>
+
+      <div style="margin-top: 30px;">
+        <a href="/gallery.html" class="explore-btn" style="display: none;" id="galleryBtn">📸 View Photo Gallery</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hidden YouTube player for music -->
+  <div id="youtubePlayer"></div>
+
+  <!-- Music toggle button -->
+  <button class="music-btn" id="musicToggleBtn" onclick="toggleMusic()">
+    <span class="music-icon">🎶</span>
+    <span class="music-label">Play Music</span>
+  </button>
+
+  <script src="/js/main.js"></script>
+  <script src="/js/cake.js"></script>
+  <script src="/js/player.js"></script>
+</body>
+</html>
